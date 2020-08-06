@@ -6,10 +6,11 @@
     </head>
     <body>
         <nav>
-                <a href="index.html"><img src="logo.png" /></a>
+                <a href="/"><img src="logo.png" /></a>
                 <a class="navButton" href="add.html">Write Something</a>
         </nav>
         <div id="page" class="page">
+
         </div>
         
     </body>

@@ -1,6 +1,9 @@
-this is a tsxt
-im going to do a second
-
-this is a tsxt
-im going to do a second
-
+===Welcome===
+This text was typed by the creator.
+Click "Write Something" above to add text to this document.
+Your text will be in the doc in under a minute, please be patient.
+You can reload to see new content
+<p style="color:red;">You can also type html in your text to have custom content, It will be rendered as HTML</p>
+<img src="http://cdn.onlinewebfonts.com/svg/img_235883.png">
+Have Fun!======================================================
+Have Fun!

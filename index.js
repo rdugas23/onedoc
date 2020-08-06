@@ -22,13 +22,19 @@ app.listen(port, function() {
 });
 
 app.get('/', function(req, res){
+    rawData = fs.readFileSync('data/data.txt');
+    dataString = rawData.toString();
+    readData = dataString.split('\n');
+
     res.writeHead(200, {"Content-Type": "text/html"});
-    var desFile = fs.readFileSync('index.txt').toString();
+    var desFile = fs.readFileSync('clientResources/index.txt').toString();
     var fileArray = desFile.split('\n');
     for(var i=0; i<fileArray.length; i++){
       res.write(fileArray[i]);
-      if(i == 7){
-        res.write('<a href="#">' + queries[contentList[0]] + '</a>');
+      if(i == 12){
+            for(var q=0; q<readData.length; q++){
+                res.write(readData[q] + '<br>');
+            }
       }
       //SEND A DIV WITH A SPECIAL ID CONTAINING THE SERVER INFORMATION. THE WEBSITE CAN THEN PROCESS THE INFORMATION IN THE DIV AND HIDE THE DIV.
     }
@@ -38,7 +44,23 @@ app.get('/', function(req, res){
 app.post('/indexAddition', function(req, res){
     newData.push(req.body.text);
     console.log("Text Recieved: " + req.body.text);
-    res.sendFile('clientResources/index.html', { root: __dirname + "/" } );
+    rawData = fs.readFileSync('data/data.txt');
+    dataString = rawData.toString();
+    readData = dataString.split('\n');
+
+    res.writeHead(200, {"Content-Type": "text/html"});
+    var desFile = fs.readFileSync('clientResources/index.txt').toString();
+    var fileArray = desFile.split('\n');
+    for(var i=0; i<fileArray.length; i++){
+      res.write(fileArray[i]);
+      if(i == 12){
+            for(var q=0; q<readData.length; q++){
+                res.write(readData[q] + '<br>');
+            }
+      }
+      //SEND A DIV WITH A SPECIAL ID CONTAINING THE SERVER INFORMATION. THE WEBSITE CAN THEN PROCESS THE INFORMATION IN THE DIV AND HIDE THE DIV.
+    }
+    res.end();
 });
 
 console.log("Service Initialized...");
@@ -63,6 +85,7 @@ function writeToDisk(data){
         console.log("Writing " + (i/data.length)*100 + "% of " + data.length + " Chunks completed");
         fs.appendFileSync('data/data.txt', data[i] + '\n');
     }
+    data = [];
     console.log("Write completed, clearing console in 15 sec");
     setTimeout(function(){
         console.clear();
