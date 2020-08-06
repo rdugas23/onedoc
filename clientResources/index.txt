@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Onepage - Add a note</title>
+        <title>Onepage</title>
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
@@ -9,8 +9,8 @@
                 <a href="index.html"><img src="logo.png" /></a>
                 <a class="navButton" href="add.html">Write Something</a>
         </nav>
-        <div id="page">
-        </div>>
+        <div id="page" class="page">
+        </div>
         
     </body>
 </html>

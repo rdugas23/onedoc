@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Onepage - Add a note</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <nav>
+                <a href="index.html"><img src="logo.png" /></a>
+                <a class="navButton" href="index.html">Back</a>
+        </nav>
+        <div class="page">
+            <form id="add" method="POST" action="/indexAddition">
+                <h2>Write!</h2>
+                <p class="italic">NOTE: Submitting your note is PERMANENT. I cannot be undone and will not be undone. make sure you know what you REALLY want to say before submitting.</p>
+                <textarea name="text" rows="30" cols="100"></textarea>
+                <br />
+                <input type="submit" value="Add" />
+            </form>
+        </div>
+    </body>
+</html>
